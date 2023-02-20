@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 export default function NavBar() {
 	return (
 		<>
-			<Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+			<Navbar collapseOnSelect expand="sm" bg="light" variant="light">
 				<Container>
 					<Navbar.Brand>Legend</Navbar.Brand>
 					<Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -13,15 +13,21 @@ export default function NavBar() {
 						id="responsive-navbar-nav"
 						className="justify-content-between">
 						<Nav className="mr-auto">
-							<Nav.Link>Home</Nav.Link>
-							<Nav.Link>Users</Nav.Link>
-							<Nav.Link>About</Nav.Link>
+							<Nav.Link>
+								<Link to="/">Home</Link>
+							</Nav.Link>
+							<Nav.Link>
+								<Link to="/users">Users</Link>
+							</Nav.Link>
+							<Nav.Link>
+								<Link to="/about">About</Link>
+							</Nav.Link>
 						</Nav>
 						<Nav>
-							<Button variant="primary" className="me-2">
+							<Button variant="success" className="me-2">
 								Log In
 							</Button>
-							<Button variant="primary">Sign out</Button>
+							<Button variant="outline-success">Sign out</Button>
 						</Nav>
 					</Navbar.Collapse>
 				</Container>
