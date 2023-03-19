@@ -13,15 +13,18 @@ export default function NavBar() {
 						id="responsive-navbar-nav"
 						className="justify-content-between">
 						<Nav className="mr-auto">
-							<Nav.Link>
-								<Link to="/">Home</Link>
-							</Nav.Link>
-							<Nav.Link>
-								<Link to="/users">Users</Link>
-							</Nav.Link>
-							<Nav.Link>
-								<Link to="/about">About</Link>
-							</Nav.Link>
+							<Link className="p-3" to="/">
+								Home
+							</Link>
+							<Link className="p-3" to="/users">
+								Users
+							</Link>
+							<Link className="p-3" to="/about">
+								About
+							</Link>
+							<Link className="p-3" to="/calc">
+								Calc
+							</Link>
 						</Nav>
 						<Nav>
 							<Button variant="success" className="me-2">
