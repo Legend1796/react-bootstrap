@@ -6,8 +6,8 @@ export default function NavBar() {
 	return (
 		<>
 			<Navbar collapseOnSelect expand="sm" bg="light" variant="light">
-				<Container>
-					<Navbar.Brand>Legend</Navbar.Brand>
+				<Container className="p-5">
+					<Navbar.Brand className="p-4 m-0">Legend</Navbar.Brand>
 					<Navbar.Toggle aria-controls="responsive-navbar-nav" />
 					<Navbar.Collapse
 						id="responsive-navbar-nav"
