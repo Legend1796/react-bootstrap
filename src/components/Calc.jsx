@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
 	Button,
 	ButtonGroup,
@@ -13,13 +13,18 @@ const Calc = () => {
 	const dispatch = useDispatch();
 	const cash = useSelector((state) => state.cash);
 	console.log(cash);
+	const [stateInput, setStateInput] = useState(0);
+
+	function handleChange(e) {
+		setStateInput(Number(e.target.value));
+	}
 
 	const addCash = () => {
-		dispatch({ type: "ADD_CASH", payload: 5 });
+		dispatch({ type: "ADD_CASH", payload: stateInput });
 	};
 
 	const getCash = () => {
-		dispatch({ type: "GET_CASH", payload: 5 });
+		dispatch({ type: "GET_CASH", payload: stateInput });
 	};
 
 	return (
@@ -39,13 +44,13 @@ const Calc = () => {
 				</ButtonGroup>
 				<InputGroup className="m-3 w-25">
 					<InputGroup.Text>$</InputGroup.Text>
-					<Form.Control
+					<input
 						aria-label="Amount (to the nearest dollar)"
 						required
 						type="text"
 						placeholder="Amount"
-						// value={stateCash.value}
-						// onChange={(value) => setStateCash(value)}
+						value={stateInput}
+						onChange={handleChange}
 					/>
 				</InputGroup>
 			</Container>
